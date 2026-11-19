@@ -76,6 +76,7 @@ genweb/
 
 ---
 
-## 📄 License
+## 📄 License & Rights
 
-This project is licensed under the MIT License.
+All rights reserved © 2026 Aryan Gupta. 
+This project and its source code are proprietary and not licensed for public reproduction, distribution, or commercial use without explicit permission.
