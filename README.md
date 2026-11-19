@@ -18,34 +18,33 @@
 1. **AI Discovery & Sitemap Planning:** Formulate target audience, brand tone, and sitemap hierarchy using structured AI schema generation.
 2. **Parallel Layout Synthesis:** Generate 3–4 distinct layout variations with contrasting visual architectures.
 3. **Visual Drag-and-Drop Canvas:** Select, inspect, reorder, and style modular blocks using a visual editor powered by `@measured/puck`.
-4. **Session Authentication & Security:** Google OAuth identity layer protecting workspace routes, projects, and editor instances.
+4. **User Workspace & Authentication:** Google OAuth identity layer protecting workspace routes, saved projects, and editor instances.
 
 ---
 
-## 🛠️ System Architecture & Engineering Highlights
+## 🛠️ Key Features & Engineering Highlights
 
-### 1. Visual Canvas Engine
-- Built on `@measured/puck`, delivering a clean drag-and-drop visual interface.
+### 1. Visual Drag-and-Drop Canvas Engine
+- Powered by `@measured/puck`, providing an interactive canvas for assembling, configuring, and reordering components.
 - Modular component registry where each block (e.g., `HeroBlock`) is type-safe and independently customizable.
-- Canvas trees serialize into clean, portable JSON structures ready for database persistence and AI mutation.
+- Canvas trees serialize into clean, portable JSON structures ready for database persistence and AI layout mutations.
 
-### 2. Modern Next.js 16 App Router
-- Modern React 19 architecture running on Next.js 16 with Turbopack.
-- Strict pure black (`#000000`) and subtle dark-gray border (`#1F1F1F`) design system configured via Tailwind CSS v4.
+### 2. High-Performance Next.js 16 Architecture
+- Built on React 19 and Next.js 16 with Turbopack for near-instant hot reloading.
+- Strict pure black (`#000000`) and subtle dark-gray border (`#1F1F1F`) design system configured with Tailwind CSS v4.
 - Suspense boundaries wrapping dynamic visual studio routes (`/builder/[projectId]`) for partial prerendering performance.
 
-### 3. Identity & Access Gates
-- Authenticated via **Google OAuth** powered by Auth.js / NextAuth.
-- Protected workspace routes: planning workflows, projects drawers, and visual canvas editing are gated by secure session verification.
-- HTTP-only session cookies and CSRF protection.
+### 3. Identity & Project Access
+- Integrated **Google OAuth** powered by Auth.js / NextAuth for seamless authentication.
+- Workspace routes, projects drawer, and visual canvas editing instances are gated by user session verification.
 
 ### 4. Database Schema Design (PostgreSQL + Drizzle ORM)
-- **`projects` table:** Tracks workspace metadata, ownership, and timestamps.
+- **`projects` table:** Tracks workspace metadata, project titles, and timestamps.
 - **`site_versions` table:** Stores visual layout trees inside PostgreSQL `jsonb` columns, enabling version history and branching without rigid table migrations.
 
 ---
 
-## 📂 Project Architecture
+## 📂 Project Structure
 
 ```
 genweb/
@@ -74,13 +73,6 @@ genweb/
 ├── drizzle.config.ts                  # Drizzle kit configuration for PostgreSQL
 └── .env.example                       # Template for environment configuration
 ```
-
----
-
-## 🔒 Security & Privacy
-
-- All credentials, secrets, and private keys are strictly managed via encrypted environment variables.
-- User data and visual canvas revisions are isolated by user identity.
 
 ---
 
