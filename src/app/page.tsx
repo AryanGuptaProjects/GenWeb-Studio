@@ -447,7 +447,7 @@ export default function HomePage() {
               {/* Title & Description */}
               <div className="space-y-2">
                 <h2 className="text-xl font-bold text-white group-hover:text-white flex items-center gap-2">
-                  Plan Your Website
+                  you can do palnning here
                 </h2>
                 <p className="text-sm text-neutral-400 leading-relaxed">
                   Interactive AI-guided discovery. Answer high-level questions about your business, audience, and goals to generate a structured sitemap, content plan, and style blueprint.
